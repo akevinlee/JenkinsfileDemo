@@ -3,7 +3,7 @@ pipeline {
 	
 	parameters {
 		booleanParam(name: 'DEPLOY_APP',
-			defaultValue: params.DEPLOY_APP_DEFAULT ?: false,
+			defaultValue: params.DEPLOY_APP ?: false,
             description: 'Deploy the application')
 	}
 
@@ -27,6 +27,8 @@ pipeline {
 				    // Get code from Git repository 
                 	//git url: "${env.GIT_URL}"
 					
+					println "DEPLOY_APP=${params.DEPLOY_APP}"
+					println "WEB_SERVER_URL=${env.WEB_SERVER_URL}"
 					// Print out our configurable parameters
 					if (isUnix()) {
 						sh "echo DEPLOY_APP=${params.DEPLOY_APP}"
