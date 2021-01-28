@@ -31,7 +31,7 @@ pipeline {
 					if (isUnix()) {
 						sh "echo DEPLOY_APP=${params.DEPLOY_APP}"
                         sh "echo WEB_SERVER_URL=${env.WEB_SERVER_URL}"
-						sh 'mvn clean package"
+						sh "mvn clean package"
                     } else {
 						bat "echo DEPLOY_APP=${env.DEPLOY_APP}"
                         bat "echo WEB_SERVER_URL=${env.WEB_SERVER_URL}"
