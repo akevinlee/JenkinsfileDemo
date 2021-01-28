@@ -8,7 +8,7 @@ pipeline {
 	}
 
 	environment {
-		WEB_SERVER_URL = ${params.WEB_SERVER_URL_DEFAULT ?: "http://my.webserver.com"}
+		WEB_SERVER_URL = "${params.WEB_SERVER_URL_DEFAULT ?: 'http://my.webserver.com'}"
 		GIT_URL = scm.getUserRemoteConfigs()[0].getUrl()    // Git Repo
 	}	
 		
